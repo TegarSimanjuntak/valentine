@@ -1,0 +1,73 @@
+body {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+
+}
+
+.awal{
+    display: block;
+}
+#gambar-container {
+    text-align: center;
+}
+
+#gambar {
+    width: 300px;
+    height: auto; 
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: pink;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button#yes {
+    background-color: green;
+    color: white;
+}
+
+button#no {
+    background-color: red;
+    color: white;
+}
+.akhir{
+    display: none;
+}
+.akhir h1{
+    color: white;
+}
+.container {
+    display: flex; /* Menggunakan flexbox */
+    justify-content: center; /* Mengatur konten agar berada di tengah horizontal */
+}
+
+#bunga {
+    background-color: #159faa;
+    padding: 10px 20px; 
+    border: none;
+    cursor: pointer;
+}
+
+#bunga a {
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan di dalam tombol */
+    color: white;
+}

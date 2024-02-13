@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="valentine.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="awal">
+        <div id="gambar-container">
+            <img id="gambar" src="image/1.jpg">
+        </div>
+        
+        <h1>WILL U BE MY VALENTINE ??</h1>
+        <ul>
+            <li>
+                <button id="yes">Yes</button>
+                <button id="no">No</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="akhir">
+        <img id="gambar" src="image/akhir.jpg">
+        <h1>ITU DIAAAA !!!</h1>
+        <div class="container">
+            <button id="bunga"><a href="flower.html">bunga nih</a></button>
+        </div>
+        
+    </div>
+    <script>
+        // Mengambil elemen tombol yes dan no
+        const yesButton = document.getElementById('yes');
+        const noButton = document.getElementById('no');
+        // Mengambil elemen gambar
+        const gambar = document.getElementById('gambar');
+        let ukuran = 20;
+        // Array daftar gambar
+        const awal = document.getElementsByClassName('awal');
+        const akhir = document.getElementsByClassName('akhir');
+    
+        const images = ['image/1.jpg', 'image/2.jpg', 'image/3.jpg', 'image/4.jpg', 'image/5.jpg', 'image/6.jpg', 'image/7.jpg', 'image/8.jpg', 'image/9.jpg'];
+        let currentImageIndex = 0;
+        const isianNo = ['parah banget', 'mau dong manis', 'ayo dong', 'berubah pikiran g?']
+        let currentNoIndex = 0;
+    
+        // Menambahkan event listener untuk tombol no
+        noButton.addEventListener('click', function () {
+            // Mengubah teks tombol yes menjadi 'Besar!'
+            yesButton.textContent = 'maukkkkk';
+            // Memperbesar tombol yes
+            yesButton.style.fontSize = ukuran + "px";
+            // Mengganti teks tombol no sesuai dengan indeks di array isianNo
+            noButton.textContent = isianNo[currentNoIndex];
+            // Memperbarui indeks untuk kata berikutnya di array isianNo
+            currentNoIndex = (currentNoIndex + 1) % isianNo.length;
+            // Mengganti gambar menjadi gambar selanjutnya di array images
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            gambar.src = images[currentImageIndex];
+            ukuran = ukuran + 20;
+    
+        });
+    
+        // Menambahkan event listener untuk tombol yes
+        yesButton.addEventListener('click', function () {
+            // Menyembunyikan elemen-elemen dengan kelas "awal" dan menampilkan elemen-elemen dengan kelas "akhir"
+            for (let i = 0; i < awal.length; i++) {
+                awal[i].style.display = 'none';
+            }
+            for (let i = 0; i < akhir.length; i++) {
+                akhir[i].style.display = 'block';
+            }
+            
+            document.body.style.backgroundColor = "#ffcccc"; // Warna latar belakang jika gambar tidak tersedia atau loading
+        });
+    </script>
+    
+</body>
+</html>
